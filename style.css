@@ -1,0 +1,10 @@
+#chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.bar {
+  width: 1.5vw;
+  background-color: rgb(78, 49, 104);
+}
