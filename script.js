@@ -6,7 +6,7 @@ let theNumber = 1;
 let randomNumber;
 let arrLength = 0;
 
-document.querySelector("#btn").addEventListener("click", loop);
+loop();
 
 function loop() {
   randomNumber = Math.floor(Math.random() * 32);
