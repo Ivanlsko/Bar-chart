@@ -21,8 +21,8 @@ function loop() {
     console.log(valuesArr);
     setTimeout(loop, 200);
   } else {
-    randomNumber = generateRanNumber();
     valuesArr.shift();
+    randomNumber = generateRanNumber();
     valuesArr.push(randomNumber);
     console.log(valuesArr);
     setTimeout(loop, 200);
