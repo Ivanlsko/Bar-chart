@@ -13,25 +13,25 @@ function generateRanNumber() {
 loop();
 
 function loop() {
+  displayBars();
   arrLength++;
-  displayBars;
   if (arrLength < 40) {
     randomNumber = generateRanNumber();
     valuesArr.push(randomNumber);
     console.log(valuesArr);
-    setTimeout(loop, 100);
+    setTimeout(loop, 200);
   } else {
     randomNumber = generateRanNumber();
-    valuesArr.push(randomNumber);
     valuesArr.shift();
+    valuesArr.push(randomNumber);
     console.log(valuesArr);
-    setTimeout(loop, 100);
+    setTimeout(loop, 200);
   }
 }
 
 //function addValueToArr() {}
 
-function displayBars() {
+/*function displayBars() {
   console.log("i am connected");
   valuesArr.forEach((e) => {
     newDiv = document.createElement("div");
@@ -39,9 +39,24 @@ function displayBars() {
     document.querySelector("#chart").appendChild(newDiv);
     addId();
   });
+}*/
+
+function displayBars() {
+  if (arrLength < 40) {
+    valuesArr[arrLength] = randomNumber;
+    newDiv = document.createElement("div");
+    document.querySelector("#chart").appendChild(newDiv);
+    addId();
+  } else {
+    document.querySelector("#chart").firstChild.remove();
+    valuesArr[arrLength] = randomNumber;
+    newDiv = document.createElement("div");
+    document.querySelector("#chart").appendChild(newDiv);
+    addId();
+  }
 }
 
 function addId() {
   newDiv.setAttribute("class", "bar");
-  newDiv.style.height = `${theNumber}vw`;
+  newDiv.style.height = `${randomNumber}vw`;
 }
